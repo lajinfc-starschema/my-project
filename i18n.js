@@ -24,6 +24,7 @@ const translations = {
     expand: "展开",
     collapse: "收起",
     langBtn: "EN",
+    restaurantCount: (n) => `${n}家餐厅，总有一家适合你`,
   },
   en: {
     subtitle: "Top Foodie · 火龙果's",
@@ -50,6 +51,7 @@ const translations = {
     expand: "Show more",
     collapse: "Show less",
     langBtn: "中文",
+    restaurantCount: (n) => `${n} restaurants, something for everyone`,
   },
 };
 

@@ -89,6 +89,14 @@ body {
   font-style: italic;
 }
 
+.restaurant-count-line {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+  font-family: sans-serif;
+}
+
 .byob-tip {
   max-width: 600px;
   margin: 10px auto 0;

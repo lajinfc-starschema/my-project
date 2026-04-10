@@ -91,6 +91,8 @@ function applyFilter() {
 
 function updateStaticText() {
   document.querySelector('.byob-tip').textContent = t('byob');
+  document.getElementById('restaurant-count').textContent = translations[currentLang].restaurantCount(restaurants.length);
+
   document.querySelector('.subtitle').textContent = t('subtitle');
   document.querySelector('.hero h1').textContent = t('title');
   document.querySelector('footer p').textContent = t('footer');
