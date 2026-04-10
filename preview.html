@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Background Preview</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B vs H 完整预览</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <filter id="ink-stamp" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.055" numOctaves="4" seed="8" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+        <feComposite in="displaced" in2="SourceGraphic" operator="in"/>
+      </filter>
+    </defs>
+  </svg>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background: #f5f5f7;
-      font-family: -apple-system, sans-serif;
-      padding: 60px 20px;
-    }
+    body { background: #f0ebe4; font-family: 'Noto Sans SC', sans-serif; padding: 50px 20px 80px; }
 
     h1 {
       text-align: center;
@@ -21,311 +27,249 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       color: #86868b;
-      margin-bottom: 48px;
-      font-weight: 400;
+      margin-bottom: 40px;
     }
 
     .options {
       display: flex;
-      gap: 20px;
+      gap: 32px;
       justify-content: center;
       flex-wrap: wrap;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .option { width: 200px; }
+    .option { width: 340px; }
 
     .option-label {
-      text-align: center;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #86868b;
       margin-bottom: 12px;
+      text-align: center;
     }
 
     .card {
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+      border-radius: 18px;
+      overflow: visible;
+      box-shadow: 0 6px 28px rgba(0,0,0,0.12);
+      position: relative;
     }
 
+    /* ── HEADER ── */
     .header {
+      border-radius: 18px 18px 0 0;
+      display: flex;
+      align-items: center;
+      padding: 16px 60px 16px 18px;
+      min-height: 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-name {
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: #fff;
+      white-space: nowrap;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      line-height: 1.2;
+    }
+
+    .chili { font-size: 1rem; margin-left: 5px; }
+
+    .stamp {
+      position: absolute;
+      right: 16px;
+      top: -24px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      min-height: 130px;
-      padding: 20px;
-    }
-
-    .rating {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 5rem;
       font-weight: 900;
-      background: linear-gradient(135deg, #ffffff, #ffe566, #ffd000, #ffe566, #ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
+      font-size: 1.8rem;
+      font-family: 'Noto Serif SC', serif;
+      transform: rotate(-15deg);
+      filter: url(#ink-stamp);
+      z-index: 3;
     }
 
-    .chili { font-size: 2rem; line-height: 1; }
+    .stamp-b {
+      background: #000;
+      border: 3px solid #ffd000;
+      color: #ffd000;
+      text-shadow: 0 0 8px rgba(255,200,0,0.5);
+    }
 
-    .bg-a { background: #7b0d0d; }
-    .bg-b { background: #1a3a2a; }
-    .bg-c { background: #2a1a3a; }
-    .bg-d { background: #2c1a0e; }
-    .bg-e { background: linear-gradient(135deg, #000000, #5a0a0a); }
-    .bg-f { background: #0a1628; }
-    .bg-g { background: #0d2b2b; }
-    .bg-h { background: #1e1e1e; }
-    .bg-i { background: #1e2810; }
-    .bg-j { background: linear-gradient(135deg, #1a0a00, #3d1f00); }
-    .bg-k { background: #4a0d5c; }
-    .bg-l { background: #6b1a7a; }
-    .bg-m { background: linear-gradient(135deg, #2d0a3a, #7b1fa2); }
-    .bg-n { background: #8e24aa; }
-    .bg-o { background: #ab47bc; }
-    .bg-p { background: linear-gradient(135deg, #6a1b9a, #ce93d8); }
+    .stamp-h {
+      background: #ffd000;
+      border: 3px solid #1a1a1a;
+      color: #000;
+    }
 
-    .card-body {
+    .bg-b { background: #000; }
+    .bg-h { background: #2a0a3a; }
+
+    /* ── SUMMARY ── */
+    .summary {
       background: #fff;
-      padding: 14px 16px;
-      border-top: 1px solid #f0f0f0;
+      padding: 18px 18px 14px;
+      border-bottom: 1px solid #f0f0f0;
+      padding-top: 28px;
     }
-    .card-name {
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      color: #555;
+    }
+
+    .category { color: #c0392b; font-weight: 600; }
+
+    /* ── DETAIL ── */
+    .detail {
+      background: #fff;
+      border-radius: 0 0 18px 18px;
+      padding: 14px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .address { font-size: 0.8rem; color: #888; }
+
+    .description { font-size: 0.9rem; color: #444; line-height: 1.6; }
+
+    .reservation { font-size: 0.8rem; color: #666; font-style: italic; }
+
+    .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill {
+      background: #f0ebe4;
+      border-radius: 100px;
+      padding: 4px 10px;
+      font-size: 0.76rem;
+      color: #555;
+    }
+
+    .must-try {
+      background: #fdf6ec;
+      border-left: 3px solid #d4a017;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .must-try-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #d4a017;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+      display: block;
+    }
+
+    .dishes { display: flex; flex-wrap: wrap; gap: 6px; }
+    .dish {
+      background: #fff;
+      border: 1px solid #e8d9b8;
+      border-radius: 6px;
+      padding: 3px 9px;
+      font-size: 0.8rem;
+      color: #333;
+    }
+
+    .dianping {
+      display: block;
+      text-align: center;
+      background: #ff6b9d;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 8px;
       font-size: 0.85rem;
       font-weight: 600;
-      color: #1d1d1f;
-      margin-bottom: 2px;
     }
-    .card-sub { font-size: 0.7rem; color: #86868b; }
   </style>
 </head>
 <body>
-  <h1>选一个底色</h1>
+  <h1>B vs H 完整预览</h1>
   <div class="options">
 
+    <!-- OPTION B -->
     <div class="option">
-      <div class="option-label">A — 深红</div>
-      <div class="card">
-        <div class="header bg-a">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">B — 墨绿</div>
+      <div class="option-label">B · 思源宋体 + 纯黑 + 黑金章</div>
       <div class="card">
         <div class="header bg-b">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
+          <span class="card-name" style="font-family:'Noto Serif SC',serif">南蛮子（进贤路店）<span class="chili">🌶️</span></span>
+          <div class="stamp stamp-b">夯</div>
         </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
+        <div class="summary">
+          <div class="meta">
+            <span class="category">云南菜</span>
+            <span>📍 法租界 · 浦西核心区</span>
+            <span>💰 人均 ¥100</span>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">C — 深紫</div>
-      <div class="card">
-        <div class="header bg-c">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">D — 深咖啡</div>
-      <div class="card">
-        <div class="header bg-d">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
+        <div class="detail">
+          <p class="address">📌 进贤路，徐汇区</p>
+          <p class="description">云南菜馆，藏在法租界的街边小店。环境简朴，明厨亮灶，隔着玻璃能直接看见后厨操作。烟火气十足，更适合朋友聚餐而非正式请客。没有包间，但有大圆桌，2到10个人都能坐得舒服。</p>
+          <p class="reservation">📅 平时无需预定，周末饭点可在大众点评提前订位</p>
+          <div class="pills">
+            <span class="pill">👥 2–10 人</span>
+            <span class="pill">🎉 朋友聚餐</span>
+            <span class="pill">🏠 简朴</span>
+          </div>
+          <div class="must-try">
+            <span class="must-try-label">必点</span>
+            <div class="dishes">
+              <span class="dish">黑三剁</span><span class="dish">木姜子牛肉</span><span class="dish">菌子鸡汤</span>
+              <span class="dish">炸排骨</span><span class="dish">烤罗非鱼</span><span class="dish">酥红豆</span>
+              <span class="dish">辣子鸡</span><span class="dish">牙签牛肉</span>
+            </div>
+          </div>
+          <a class="dianping" href="#">查看大众点评 →</a>
         </div>
       </div>
     </div>
 
+    <!-- OPTION H -->
     <div class="option">
-      <div class="option-label">E — 渐变</div>
-      <div class="card">
-        <div class="header bg-e">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">F — 深夜蓝</div>
-      <div class="card">
-        <div class="header bg-f">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">G — 深青</div>
-      <div class="card">
-        <div class="header bg-g">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">H — 炭灰</div>
+      <div class="option-label">H · 思源宋体 + 深紫 + 黄底黑章</div>
       <div class="card">
         <div class="header bg-h">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
+          <span class="card-name" style="font-family:'Noto Serif SC',serif">南蛮子（进贤路店）<span class="chili">🌶️</span></span>
+          <div class="stamp stamp-h">夯</div>
         </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
+        <div class="summary">
+          <div class="meta">
+            <span class="category">云南菜</span>
+            <span>📍 法租界 · 浦西核心区</span>
+            <span>💰 人均 ¥100</span>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">I — 深橄榄</div>
-      <div class="card">
-        <div class="header bg-i">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">J — 焦糖渐变</div>
-      <div class="card">
-        <div class="header bg-j">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">K — 暗紫</div>
-      <div class="card">
-        <div class="header bg-k">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">L — 亮紫</div>
-      <div class="card">
-        <div class="header bg-l">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">M — 紫渐变</div>
-      <div class="card">
-        <div class="header bg-m">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">N — 紫1</div>
-      <div class="card">
-        <div class="header bg-n">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">O — 紫2</div>
-      <div class="card">
-        <div class="header bg-o">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="option">
-      <div class="option-label">P — 紫渐变亮</div>
-      <div class="card">
-        <div class="header bg-p">
-          <div class="rating">夯！</div>
-          <div class="chili">🌶️</div>
-        </div>
-        <div class="card-body">
-          <div class="card-name">南蛮子（进贤路店）</div>
-          <div class="card-sub">云南菜 · 法租界 · 人均 ¥100</div>
+        <div class="detail">
+          <p class="address">📌 进贤路，徐汇区</p>
+          <p class="description">云南菜馆，藏在法租界的街边小店。环境简朴，明厨亮灶，隔着玻璃能直接看见后厨操作。烟火气十足，更适合朋友聚餐而非正式请客。没有包间，但有大圆桌，2到10个人都能坐得舒服。</p>
+          <p class="reservation">📅 平时无需预定，周末饭点可在大众点评提前订位</p>
+          <div class="pills">
+            <span class="pill">👥 2–10 人</span>
+            <span class="pill">🎉 朋友聚餐</span>
+            <span class="pill">🏠 简朴</span>
+          </div>
+          <div class="must-try">
+            <span class="must-try-label">必点</span>
+            <div class="dishes">
+              <span class="dish">黑三剁</span><span class="dish">木姜子牛肉</span><span class="dish">菌子鸡汤</span>
+              <span class="dish">炸排骨</span><span class="dish">烤罗非鱼</span><span class="dish">酥红豆</span>
+              <span class="dish">辣子鸡</span><span class="dish">牙签牛肉</span>
+            </div>
+          </div>
+          <a class="dianping" href="#">查看大众点评 →</a>
         </div>
       </div>
     </div>
