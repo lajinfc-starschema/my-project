@@ -261,38 +261,42 @@ body {
 
 .expand-hint {
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 14px;
   display: flex;
   align-items: center;
   gap: 3px;
   cursor: pointer;
   z-index: 2;
+  background: var(--red);
+  color: #fff;
+  padding: 3px 10px 3px 8px;
+  border-radius: 100px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: opacity 0.2s;
+}
+
+.expand-hint:hover {
+  opacity: 0.85;
 }
 
 .expand-label {
-  font-size: 0.82rem;
-  color: #888;
+  font-size: 0.75rem;
+  color: #fff;
   font-family: sans-serif;
   font-weight: 600;
   letter-spacing: 0.5px;
-  transition: color 0.2s;
 }
 
 .expand-icon {
-  font-size: 1.1rem;
-  color: #888;
+  font-size: 0.9rem;
+  color: #fff;
   line-height: 1;
-  transition: transform 0.3s ease, color 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 .card.expanded .expand-icon {
   transform: rotate(180deg);
-  color: var(--red);
-}
-
-.card.expanded .expand-label {
-  color: var(--red);
 }
 
 
