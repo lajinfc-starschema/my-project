@@ -5,7 +5,7 @@ const translations = {
     tagline: "隐藏宝藏、本地最爱、难忘的一餐 — 全部来自一个真正住在这里的人。",
     filters: {
       all: "全部",
-      jiangzhe: "江浙小海鲜 🦞",
+      jiangzhe: "江浙小海鲜 🐟",
       sichuan: "川菜 🌶️🌶️",
       hunan: "湘菜 🌶️🌶️🌶️",
       jiangxi: "江西菜 🌶️🌶️🌶️🌶️🌶️",
@@ -31,7 +31,7 @@ const translations = {
     tagline: "Hidden gems, local favourites, and unforgettable meals — handpicked from someone who actually lives here.",
     filters: {
       all: "All",
-      jiangzhe: "Jiangzhe Seafood 🦞",
+      jiangzhe: "Jiangzhe Seafood 🐟",
       sichuan: "Sichuan 🌶️🌶️",
       hunan: "Hunan 🌶️🌶️🌶️",
       jiangxi: "Jiangxi 🌶️🌶️🌶️🌶️🌶️",
