@@ -677,10 +677,138 @@ body {
   margin-bottom: 28px;
 }
 
-/* Cusdis dark theme overrides */
-#cusdis_thread iframe {
-  color-scheme: dark;
+.guestbook-empty {
+  color: rgba(255,255,255,0.35);
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  margin-bottom: 28px;
 }
+
+.guestbook-comment {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+
+.comment-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.comment-name {
+  color: #F472B6;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.comment-date {
+  color: rgba(255,255,255,0.3);
+  font-size: 0.75rem;
+  font-family: sans-serif;
+}
+
+.comment-content {
+  color: rgba(255,255,255,0.82);
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.comment-reply {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(244,114,182,0.08);
+  border-left: 3px solid #F472B6;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.88rem;
+  font-family: sans-serif;
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.reply-label {
+  color: #F472B6;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.reply-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.guestbook-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.guestbook-input,
+.guestbook-textarea {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.guestbook-input:focus,
+.guestbook-textarea:focus {
+  border-color: #F472B6;
+}
+
+.guestbook-input::placeholder,
+.guestbook-textarea::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+
+.guestbook-textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.guestbook-submit {
+  align-self: flex-end;
+  background: #F472B6;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.guestbook-submit:hover { opacity: 0.85; }
+.guestbook-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.guestbook-status {
+  font-size: 0.85rem;
+  font-family: sans-serif;
+  margin-top: 6px;
+  min-height: 1.2em;
+}
+
+.guestbook-status.success { color: #86efac; }
+.guestbook-status.error { color: #fca5a5; }
 
 footer {
   text-align: center;

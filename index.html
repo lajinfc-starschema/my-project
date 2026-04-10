@@ -70,15 +70,16 @@
 
   <section class="guestbook">
     <h2 class="guestbook-title"><img src="hlg-avatar.svg" alt="🐉" class="guestbook-icon"> 留言板</h2>
-    <p class="guestbook-subtitle">吃过了吗？有什么想说的？在下方留言，往下滑可以看到大家的留言 👇</p>
-    <div id="cusdis_thread"
-      data-host="https://cusdis.com"
-      data-app-id="4f24773e-a1f9-4538-a7b0-62cde2489280"
-      data-page-id="shgoodeats-guestbook"
-      data-page-url="https://kudaiyo.github.io/shgoodeats/"
-      data-page-title="上海好吃地图 留言板"
-    ></div>
-    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    <p class="guestbook-subtitle">吃过了吗？有什么想说的？</p>
+
+    <div id="guestbook-comments"></div>
+
+    <form id="guestbook-form" class="guestbook-form">
+      <input type="text" id="guestbook-name" placeholder="你的名字（选填，默认匿名）" class="guestbook-input" />
+      <textarea id="guestbook-content" placeholder="留下你的想法..." class="guestbook-textarea" required></textarea>
+      <button type="submit" class="guestbook-submit">留言 →</button>
+    </form>
+    <p id="guestbook-status" class="guestbook-status"></p>
   </section>
 
   <footer>
@@ -99,6 +100,7 @@
   <script src="restaurants.js"></script>
   <script src="i18n.js"></script>
   <script src="app.js"></script>
+  <script src="guestbook.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/shgoodeats/service-worker.js');
