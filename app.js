@@ -52,6 +52,7 @@ function renderCards(list) {
             <span class="summary-price">💰 ${perPerson}</span>
           </div>
         </div>
+        <span class="expand-icon">&#8964;</span>
       </div>
       <div class="card-detail">
         <p class="address">📌 ${r_field(r, 'address')}</p>
