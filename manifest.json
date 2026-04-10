@@ -1,7 +1,7 @@
 {
   "name": "上海好吃地图",
   "short_name": "好吃地图",
-  "description": "bussinbussin出品 · 火龙果的上海餐厅推荐",
+  "description": "火啦火啦工作室出品 · 火龙果的上海餐厅推荐",
   "start_url": "/shgoodeats/",
   "display": "standalone",
   "background_color": "#1a1a1a",
