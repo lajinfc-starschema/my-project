@@ -498,6 +498,15 @@ body {
   opacity: 0.75;
 }
 
+.author-title {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  font-family: sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
 .author-bio {
   font-size: 0.82rem;
   color: rgba(255,255,255,0.55);
