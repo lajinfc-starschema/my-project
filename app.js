@@ -53,11 +53,8 @@ function renderCards(list) {
           </div>
         </div>
       </div>
-      <div class="expand-hint">
-        <span class="expand-label">${t('expand')}</span>
-        <span class="expand-icon">&#8964;</span>
-      </div>
       <div class="card-detail">
+        <div class="expand-hint"><span class="expand-label">${t('expand')}</span><span class="expand-icon">&#8964;</span></div>
         <p class="address">📌 ${r_field(r, 'address')}</p>
         <p class="description">${r_field(r, 'description')}</p>
         ${reservationRow}
@@ -79,7 +76,7 @@ function renderCards(list) {
     };
 
     card.querySelector('.card-summary').addEventListener('click', toggleCard);
-    card.querySelector('.expand-hint').addEventListener('click', toggleCard);
+    card.querySelector('.expand-hint').addEventListener('click', e => { e.stopPropagation(); toggleCard(); });
 
     grid.appendChild(card);
   });
