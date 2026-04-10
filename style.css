@@ -66,6 +66,16 @@ body {
   letter-spacing: 20px;
 }
 
+.hero-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .subtitle {
   font-size: 0.9rem;
   letter-spacing: 3px;
