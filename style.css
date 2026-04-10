@@ -97,6 +97,15 @@ body {
   font-family: sans-serif;
 }
 
+.rating-explainer {
+  max-width: 600px;
+  margin: 0 auto 12px;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.82rem;
+  font-family: sans-serif;
+  letter-spacing: 0.5px;
+}
+
 .byob-tip {
   max-width: 600px;
   margin: 10px auto 0;
