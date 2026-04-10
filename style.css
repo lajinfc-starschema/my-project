@@ -206,14 +206,13 @@ body {
 
 .rating-text {
   font-family: 'Noto Serif SC', serif;
-  font-size: clamp(0.75rem, 2.5vw, 1.1rem);
   font-weight: 900;
   color: #ffd000;
   text-shadow: 0 0 10px rgba(255,210,0,0.6);
-  line-height: 1.15;
-  text-align: center;
-  word-break: break-all;
-  white-space: normal;
+  line-height: 1.1;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: -0.05em;
   transform: rotate(-15deg);
   display: inline-flex;
   align-items: center;
@@ -233,14 +232,20 @@ body {
   transition: font-size 0.4s ease, width 0.4s ease, height 0.4s ease, border-width 0.4s ease, top 0.4s ease;
 }
 
+.rating-text[data-len="1"] { font-size: 2rem; }
+.rating-text[data-len="2"] { font-size: 1.2rem; }
+.rating-text[data-len="3"] { font-size: 0.85rem; }
+
 .card.expanded .rating-text {
-  font-size: clamp(1.4rem, 4vw, 2.2rem);
   width: 100px;
   height: 100px;
   border-width: 4px;
-  border-color: #ffd000;
   top: -90px;
 }
+
+.card.expanded .rating-text[data-len="1"] { font-size: 4rem; }
+.card.expanded .rating-text[data-len="2"] { font-size: 2.4rem; }
+.card.expanded .rating-text[data-len="3"] { font-size: 1.7rem; }
 
 .card-chili {
   font-size: 1rem;

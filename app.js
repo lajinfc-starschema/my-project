@@ -34,7 +34,7 @@ function renderCards(list) {
       : `<div class="card-emoji"><h2 class="card-title">${r_field(r, 'name')}</h2>${r.emoji}</div>`;
 
     const stamp = r.rating
-      ? `<span class="rating-text">${r.rating}</span>`
+      ? `<span class="rating-text" data-len="${r.rating.length}">${r.rating}</span>`
       : '';
 
     const perPerson = r_field(r, 'perPerson') || r.priceRange;
