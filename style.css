@@ -206,17 +206,21 @@ body {
 
 .rating-text {
   font-family: 'Noto Serif SC', serif;
-  font-size: 2rem;
+  font-size: clamp(0.75rem, 2.5vw, 1.1rem);
   font-weight: 900;
   color: #ffd000;
   text-shadow: 0 0 10px rgba(255,210,0,0.6);
-  line-height: 1;
+  line-height: 1.15;
+  text-align: center;
+  word-break: break-all;
+  white-space: normal;
   transform: rotate(-15deg);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 52px;
   height: 52px;
+  overflow: hidden;
   background: transparent;
   border: 3px solid #ffd000;
   border-radius: 50%;
@@ -230,7 +234,7 @@ body {
 }
 
 .card.expanded .rating-text {
-  font-size: 4.5rem;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
   width: 100px;
   height: 100px;
   border-width: 4px;
