@@ -444,11 +444,6 @@ body {
 }
 
 /* ── AUTHORS ── */
-.authors {
-  background: var(--dark);
-  padding: 40px 20px;
-}
-
 .authors-inner {
   display: flex;
   align-items: center;
@@ -456,6 +451,12 @@ body {
   gap: 40px;
   max-width: 700px;
   margin: 0 auto;
+}
+
+.hero-authors {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.12);
 }
 
 .author-card {

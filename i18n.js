@@ -1,7 +1,7 @@
 const translations = {
   zh: {
     subtitle: "火龙果亲测推荐",
-    title: "上海最好吃的餐厅",
+    title: "吃商天花板｜火龙果的「上海好吃地图」",
     tagline: "隐藏宝藏、本地最爱、难忘的一餐 — 全部来自一个真正住在这里的人。",
     filters: {
       all: "全部",
@@ -27,7 +27,7 @@ const translations = {
   },
   en: {
     subtitle: "Personally curated by 火龙果",
-    title: "The Best Restaurants in Shanghai",
+    title: "Top Foodie Picks | 火龙果's Shanghai Food Map",
     tagline: "Hidden gems, local favourites, and unforgettable meals — handpicked from someone who actually lives here.",
     filters: {
       all: "All",
