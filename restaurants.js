@@ -142,8 +142,8 @@ const restaurants = [
     dianping: "https://m.dianping.com/shop/1804042946",
   },
   {
-    name: "炙苑（浦东嘉里城店）",
-    name_en: "Zhì Yuàn (Kerry Parkside)",
+    name: "炙苑",
+    name_en: "Zhì Yuàn",
     category: "japanese",
     category_en: "japanese",
     neighborhood: "浦东 · 世纪公园板块",
