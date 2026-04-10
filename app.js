@@ -87,7 +87,6 @@ function updateStaticText() {
   document.querySelector('.byob-tip').textContent = t('byob');
   document.querySelector('.subtitle').textContent = t('subtitle');
   document.querySelector('.hero h1').textContent = t('title');
-  document.querySelector('.tagline').textContent = t('tagline');
   document.querySelector('footer p').textContent = t('footer');
   document.getElementById('lang-btn').textContent = t('langBtn');
   filterBtns.forEach(btn => {
