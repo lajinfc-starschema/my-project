@@ -89,15 +89,13 @@ body {
   font-style: italic;
 }
 
-/* ── BYOB BANNER ── */
-.byob-banner {
-  background-image: linear-gradient(135deg, #1a1a1a 0%, #2c1a0e 100%);
-  color: rgba(255,255,255,0.75);
-  text-align: center;
-  padding: 10px 20px;
+.byob-tip {
+  max-width: 600px;
+  margin: 10px auto 0;
+  color: rgba(255,255,255,0.55);
   font-size: 0.85rem;
+  font-style: italic;
   font-family: sans-serif;
-  letter-spacing: 0.5px;
 }
 
 /* ── FILTERS ── */
