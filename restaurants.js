@@ -83,8 +83,7 @@ const restaurants = [
     occasion_en: "Friends dinner / Intimate hosting",
     atmosphere: "精致",
     atmosphere_en: "Refined",
-    emoji: "🦐",
-    spicy: 0,
+    rating: "夯",
     dianping: "https://m.dianping.com/shop/1022572955"
   },
 ];
