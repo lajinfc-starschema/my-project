@@ -165,7 +165,7 @@ const restaurants = [
     occasion_en: "Friends dinner / Hosting",
     atmosphere: "高端精致",
     atmosphere_en: "Upscale",
-    rating: "天花板",
+    rating: "夯",
     dianping: "https://www.dianping.com/shop/H3pRXBQ0J4tT09I2",
   },
 ];
