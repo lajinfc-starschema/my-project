@@ -138,6 +138,7 @@ body {
   padding: 20px 40px 60px;
   max-width: 1300px;
   margin: 0 auto;
+  align-items: start;
 }
 
 .empty {
