@@ -1,0 +1,22 @@
+{
+  "name": "上海好吃地图",
+  "short_name": "好吃地图",
+  "description": "bussinbussin出品 · 火龙果的上海餐厅推荐",
+  "start_url": "/shgoodeats/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "hlg.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "hlg.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
