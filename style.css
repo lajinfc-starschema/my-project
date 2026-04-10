@@ -443,6 +443,60 @@ body {
   opacity: 0.85;
 }
 
+/* ── AUTHORS ── */
+.authors {
+  background: var(--dark);
+  padding: 40px 20px;
+}
+
+.authors-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.author-card {
+  text-align: center;
+  flex: 1;
+}
+
+.author-name {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--gold);
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.author-bio {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+.author-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(255,255,255,0.15);
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .authors-inner {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .author-divider {
+    width: 40px;
+    height: 1px;
+  }
+}
+
 /* ── FOOTER ── */
 footer {
   text-align: center;
