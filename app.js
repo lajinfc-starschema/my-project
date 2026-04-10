@@ -82,6 +82,7 @@ function applyFilter() {
 }
 
 function updateStaticText() {
+  document.querySelector('.byob-banner').textContent = t('byob');
   document.querySelector('.subtitle').textContent = t('subtitle');
   document.querySelector('.hero h1').textContent = t('title');
   document.querySelector('.tagline').textContent = t('tagline');

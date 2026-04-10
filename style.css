@@ -89,6 +89,17 @@ body {
   font-style: italic;
 }
 
+/* ── BYOB BANNER ── */
+.byob-banner {
+  background: #1a1a1a;
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-family: sans-serif;
+  letter-spacing: 0.5px;
+}
+
 /* ── FILTERS ── */
 .filters {
   display: flex;
