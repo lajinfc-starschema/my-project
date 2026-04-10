@@ -184,6 +184,13 @@ body {
   text-shadow: 0 1px 4px rgba(0,0,0,0.2);
   flex: 1;
   padding-right: 8px;
+  transition: font-size 0.4s ease;
+}
+
+.card.expanded .card-title {
+  font-size: 1.5rem;
+  white-space: nowrap;
+  flex: 0 1 auto;
 }
 
 .rating-text {
@@ -225,6 +232,11 @@ body {
   font-size: 1rem;
   margin-left: 4px;
   vertical-align: middle;
+  transition: font-size 0.4s ease;
+}
+
+.card.expanded .card-chili {
+  font-size: 1.6rem;
 }
 
 /* ── SUMMARY (always visible) ── */
