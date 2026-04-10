@@ -464,6 +464,24 @@ body {
   flex: 1;
 }
 
+.author-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--gold);
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: opacity 0.2s;
+}
+
+.author-avatar:hover {
+  opacity: 0.85;
+}
+
 .author-name {
   font-family: 'Noto Serif SC', serif;
   font-size: 1.2rem;
