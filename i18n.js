@@ -19,7 +19,7 @@ const translations = {
     mustTryLabel: "必点",
     reservationLabel: "📅",
     dianpingBtn: "查看大众点评",
-    byob: "火龙果温馨提示：上海所有餐厅均可自带 🍷 酒水和 🧋 奶茶",
+    byob: "🍷火龙果温馨提示：上海所有餐厅均可自带酒水和奶茶🧋",
     footer: "火龙果出品 · 上海",
     expand: "展开",
     collapse: "收起",
