@@ -485,9 +485,57 @@ body {
   margin: 0 auto;
 }
 
+.authors-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 28px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.authors-toggle:hover {
+  opacity: 1;
+}
+
+.authors-toggle-text {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.8);
+  font-family: sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.authors-toggle-icon {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+
+.authors-toggle.open .authors-toggle-icon {
+  transform: rotate(180deg);
+}
+
 .hero-authors {
-  margin-top: 32px;
-  padding-top: 28px;
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.hero-authors.open {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: 16px;
+  padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,0.12);
 }
 

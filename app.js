@@ -118,4 +118,11 @@ document.getElementById('lang-btn').addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
   updateStaticText();
   applyFilter();
+
+  const toggle = document.getElementById('authors-toggle');
+  const panel = document.getElementById('authors-panel');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    panel.classList.toggle('open');
+  });
 });
