@@ -59,14 +59,13 @@ function renderCards(list) {
         <div class="summary-main">
           <div class="summary-meta">
             <span class="summary-category">${tFilter(r.category)}</span>
-            <span class="summary-location">📍 ${r_field(r, 'neighborhood')}</span>
+            <span class="summary-location">📌 ${r_field(r, 'address')}</span>
             <span class="summary-price">💰 ${perPerson}</span>
           </div>
         </div>
       </div>
       <div class="card-detail">
         <div class="expand-hint"><span class="expand-label">${t('expand')}</span><span class="expand-icon">&#8964;</span></div>
-        <p class="address">📌 ${r_field(r, 'address')}</p>
         <p class="description">${r_field(r, 'description')}</p>
         ${reservationRow}
         ${metaRows ? `<div class="info-pills">${metaRows}</div>` : ''}

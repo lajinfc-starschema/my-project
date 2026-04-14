@@ -824,8 +824,13 @@ footer {
 
 .tag-filter-pane {
   display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.tag-filter-btns {
+  display: flex;
   flex-wrap: wrap;
-  align-items: center;
   gap: 8px;
 }
 
@@ -837,6 +842,7 @@ footer {
   letter-spacing: 0.5px;
   white-space: nowrap;
   min-width: 70px;
+  padding-top: 5px;
 }
 
 .tag-btn {
