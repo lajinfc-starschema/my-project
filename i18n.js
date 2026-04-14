@@ -25,7 +25,8 @@ const translations = {
     collapse: "收起",
     langBtn: "EN",
     restaurantCount: (n) => `${n}家餐厅，总有一家适合你`,
-    tagLabels: { occasion: '🎉 场合', atmosphere: '🏠 氛围', group: '👥 人数' },
+    tagLabels: { category: '🍽 菜系', occasion: '🎉 场合', atmosphere: '🏠 氛围', group: '👥 人数' },
+    tagAll: '全部',
     tagMaps: {
       occasion: { '一人食': '一人食', '朋友聚餐': '朋友聚餐', '家庭聚餐': '家庭聚餐', '请客': '请客', '商务': '商务' },
       atmosphere: { '热闹': '热闹', '安静': '安静', '精致': '精致', '简朴': '简朴', '有包间': '有包间' },
@@ -58,7 +59,8 @@ const translations = {
     collapse: "Show less",
     langBtn: "中文",
     restaurantCount: (n) => `${n} restaurants, something for everyone`,
-    tagLabels: { occasion: '🎉 Occasion', atmosphere: '🏠 Vibe', group: '👥 Group size' },
+    tagLabels: { category: '🍽 Cuisine', occasion: '🎉 Occasion', atmosphere: '🏠 Vibe', group: '👥 Group size' },
+    tagAll: 'All',
     tagMaps: {
       occasion: { '一人食': 'Solo', '朋友聚餐': 'Friends dinner', '家庭聚餐': 'Family meal', '请客': 'Hosting', '商务': 'Business' },
       atmosphere: { '热闹': 'Lively', '安静': 'Quiet', '精致': 'Refined', '简朴': 'Casual', '有包间': 'Private rooms' },

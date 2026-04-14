@@ -115,15 +115,21 @@ function applyFilter() {
 }
 
 function updateTagButtons() {
+  const lang = translations[currentLang];
   document.querySelectorAll('.tag-btn').forEach(btn => {
     const type = btn.dataset.type;
     const tag = btn.dataset.tag;
     const set = activeTags[type];
-    btn.classList.toggle('active', set && set.has(tag));
-    const map = translations[currentLang].tagMaps[type];
-    btn.textContent = (map && map[tag]) || tag;
+    if (tag === '__all__') {
+      btn.classList.toggle('active', set.size === 0);
+      btn.textContent = lang.tagAll || '全部';
+    } else {
+      btn.classList.toggle('active', set && set.has(tag));
+      const map = lang.tagMaps[type];
+      btn.textContent = (map && map[tag]) || tag;
+    }
   });
-  const labels = translations[currentLang].tagLabels;
+  const labels = lang.tagLabels;
   document.querySelectorAll('.tag-filter-label').forEach(el => {
     const type = el.dataset.type;
     if (labels && labels[type]) el.textContent = labels[type];
@@ -168,13 +174,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const type = btn.dataset.type;
       const tag = btn.dataset.tag;
       const set = activeTags[type];
-      if (set.has(tag)) {
+      if (tag === '__all__') {
+        set.clear();
+      } else if (set.has(tag)) {
         set.delete(tag);
-        btn.classList.remove('active');
       } else {
         set.add(tag);
-        btn.classList.add('active');
       }
+      updateTagButtons();
       applyFilter();
     });
   });

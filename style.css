@@ -133,36 +133,30 @@ body {
   font-family: sans-serif;
 }
 
-/* ── FILTERS ── */
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  padding: 36px 20px 20px;
-}
-
+/* ── FILTERS (now part of tag-filters pane) ── */
 .filter-btn {
   background: transparent;
-  border: 1.5px solid var(--border);
-  color: var(--mid);
-  padding: 8px 20px;
+  border: 1.5px solid #ddd;
+  color: #555;
+  padding: 4px 12px;
   border-radius: 100px;
   cursor: pointer;
-  font-family: inherit;
-  font-size: 0.9rem;
-  transition: all 0.2s;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.78rem;
+  transition: all 0.15s;
+  white-space: nowrap;
 }
 
 .filter-btn:hover {
-  border-color: var(--red);
-  color: var(--red);
+  border-color: #F472B6;
+  color: #F472B6;
 }
 
 .filter-btn.active {
-  background: var(--red);
-  border-color: var(--red);
-  color: var(--white);
+  background: #F472B6;
+  border-color: #F472B6;
+  color: #fff;
+  font-weight: 600;
 }
 
 /* ── GRID ── */
@@ -820,7 +814,7 @@ footer {
 
 /* ── TAG FILTERS ── */
 .tag-filters {
-  padding: 0 24px 8px;
+  padding: 28px 24px 8px;
   max-width: 900px;
   margin: 0 auto;
   display: flex;
