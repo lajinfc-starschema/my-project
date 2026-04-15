@@ -328,19 +328,27 @@ body {
   transform: rotate(180deg);
 }
 
-.card.expanded .expand-hint {
-  position: static;
-  order: 4;
-  align-self: flex-end;
-  margin-top: 4px;
+.expand-hint--inline {
+  display: none;
 }
 
-.card.expanded .must-try {
-  order: 5;
+.card.expanded .expand-hint--top {
+  display: none;
 }
 
-.card.expanded .dianping-btn {
-  order: 6;
+.card.expanded .expand-hint--inline {
+  display: flex;
+}
+
+.pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.pills-row .info-pills {
+  flex: 1;
 }
 
 
@@ -393,6 +401,7 @@ body {
 .card.expanded .card-detail {
   max-height: 2000px;
   padding: 14px 18px 18px;
+
   -webkit-mask-image: none;
   mask-image: none;
 }

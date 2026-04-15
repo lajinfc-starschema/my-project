@@ -65,10 +65,13 @@ function renderCards(list) {
         </div>
       </div>
       <div class="card-detail">
-        <div class="expand-hint"><span class="expand-label">${t('expand')}</span><span class="expand-icon">&#8964;</span></div>
+        <div class="expand-hint expand-hint--top"><span class="expand-label">${t('expand')}</span><span class="expand-icon">&#8964;</span></div>
         <p class="description">${r_field(r, 'description')}</p>
         ${reservationRow}
-        ${metaRows ? `<div class="info-pills">${metaRows}</div>` : ''}
+        <div class="pills-row">
+          ${metaRows ? `<div class="info-pills">${metaRows}</div>` : ''}
+          <div class="expand-hint expand-hint--inline"><span class="expand-label">${t('collapse')}</span><span class="expand-icon">&#8964;</span></div>
+        </div>
         <div class="must-try">
           <span class="must-try-label">${t('mustTryLabel')}</span>
           <div class="dish-tags">${dishTags}</div>
@@ -81,12 +84,12 @@ function renderCards(list) {
 
     const toggleCard = () => {
       card.classList.toggle('expanded');
-      const label = card.querySelector('.expand-label');
-      label.textContent = card.classList.contains('expanded') ? t('collapse') : t('expand');
+      const expanded = card.classList.contains('expanded');
+      card.querySelector('.expand-hint--top .expand-label').textContent = expanded ? t('collapse') : t('expand');
     };
 
     card.querySelector('.card-summary').addEventListener('click', toggleCard);
-    card.querySelector('.expand-hint').addEventListener('click', e => { e.stopPropagation(); toggleCard(); });
+    card.querySelectorAll('.expand-hint').forEach(h => h.addEventListener('click', e => { e.stopPropagation(); toggleCard(); }));
 
     grid.appendChild(card);
   });
