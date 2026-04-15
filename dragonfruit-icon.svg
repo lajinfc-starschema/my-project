@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g fill="#F5C342">
+    <!-- Main body -->
+    <ellipse cx="50" cy="57" rx="20" ry="23"/>
+    <!-- Top bract -->
+    <path d="M44,36 C43,24 46,13 50,5 C54,13 57,24 56,36Z"/>
+    <!-- Top-right bract -->
+    <path d="M66,45 C74,37 83,33 87,39 C84,48 75,50 66,45Z"/>
+    <!-- Bottom-right bract -->
+    <path d="M63,71 C71,76 77,86 71,91 C63,89 59,78 63,71Z"/>
+    <!-- Bottom-left bract -->
+    <path d="M37,71 C39,78 35,89 27,91 C21,86 28,76 37,71Z"/>
+    <!-- Top-left bract -->
+    <path d="M34,45 C24,49 15,47 13,39 C17,33 27,37 34,45Z"/>
+  </g>
+</svg>
