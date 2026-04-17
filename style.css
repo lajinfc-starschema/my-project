@@ -247,8 +247,8 @@ body {
 }
 
 .rating-fruit {
-  width: 42px;
-  height: 42px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   transform: rotate(-15deg);
   mix-blend-mode: multiply;
@@ -261,8 +261,8 @@ body {
 }
 
 .card.expanded .rating-fruit {
-  width: 64px;
-  height: 64px;
+  width: 84px;
+  height: 84px;
 }
 
 .card-chili {
