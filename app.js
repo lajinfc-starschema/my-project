@@ -40,13 +40,13 @@ function renderCards(list) {
 
     const spicyChilis = r.spicy ? '🌶️'.repeat(r.spicy) : '';
 
-    const headerContent = r.rating
-      ? `<div class="card-rating"><h2 class="card-title">${r_field(r, 'name')}${spicyChilis ? `<span class="card-chili">${spicyChilis}</span>` : ''}</h2></div>`
-      : `<div class="card-emoji"><h2 class="card-title">${r_field(r, 'name')}</h2>${r.emoji}</div>`;
-
-    const stamp = r.rating
+    const ratingFruits = r.rating
       ? `<div class="rating-fruits">${'<img src="rating-icon.png" class="rating-fruit" alt="🔥">'.repeat(r.rating)}</div>`
       : '';
+
+    const headerContent = r.rating
+      ? `<div class="card-rating"><h2 class="card-title">${r_field(r, 'name')}${spicyChilis ? `<span class="card-chili">${spicyChilis}</span>` : ''}</h2>${ratingFruits}</div>`
+      : `<div class="card-emoji"><h2 class="card-title">${r_field(r, 'name')}</h2>${r.emoji}</div>`;
 
     const perPerson = r_field(r, 'perPerson') || r.priceRange;
 
@@ -55,7 +55,6 @@ function renderCards(list) {
     card.innerHTML = `
       ${headerContent}
       <div class="card-summary">
-        ${stamp}
         <div class="summary-main">
           <div class="summary-meta">
             <span class="summary-category">${tFilter(r.category)}</span>
