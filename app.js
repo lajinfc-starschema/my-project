@@ -44,9 +44,8 @@ function renderCards(list) {
       ? `<div class="rating-fruits">${'<img src="rating-icon.png" class="rating-fruit" alt="🔥">'.repeat(r.rating)}</div>`
       : '';
 
-    const spicyClass = r.spicy ? 'card-rating--spicy' : 'card-rating--mild';
     const headerContent = r.rating
-      ? `<div class="card-rating ${spicyClass}"><h2 class="card-title">${r_field(r, 'name')}${spicyChilis ? `<span class="card-chili">${spicyChilis}</span>` : ''}</h2>${ratingFruits}</div>`
+      ? `<div class="card-rating"><h2 class="card-title">${r_field(r, 'name')}${spicyChilis ? `<span class="card-chili">${spicyChilis}</span>` : ''}</h2>${ratingFruits}</div>`
       : `<div class="card-emoji"><h2 class="card-title">${r_field(r, 'name')}</h2>${r.emoji}</div>`;
 
     const perPerson = r_field(r, 'perPerson') || r.priceRange;
