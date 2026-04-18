@@ -875,21 +875,19 @@ footer {
 
 .stamp {
   position: absolute;
-  bottom: -14px;
-  right: 6px;
-  width: 72px;
-  height: 72px;
+  bottom: -16px;
+  right: 2px;
+  padding: 7px 10px;
   border: 2.5px solid #c9a227;
   border-radius: 3px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   transform: rotate(-10deg);
-  opacity: 0.9;
+  opacity: 0.92;
   pointer-events: none;
   filter: url(#ink-stamp);
 }
-/* inner double border */
 .stamp::before {
   content: '';
   position: absolute;
@@ -899,20 +897,15 @@ footer {
 }
 
 .stamp-face {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  position: relative; /* above ::before */
-  z-index: 1;
-}
-.stamp-face span {
   font-family: 'Noto Serif SC', serif;
   font-weight: 900;
-  font-size: 1.2rem;
-  line-height: 1.15;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  line-height: 1;
   color: #c9a227;
-  text-align: center;
-  display: block;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
 }
 
 /* ── TAG FILTERS ── */
