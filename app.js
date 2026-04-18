@@ -86,6 +86,16 @@ function renderCards(list) {
       card.classList.toggle('expanded');
       const expanded = card.classList.contains('expanded');
       card.querySelector('.expand-hint--top .expand-label').textContent = expanded ? t('collapse') : t('expand');
+      if (expanded) {
+        requestAnimationFrame(() => {
+          const titleEl = card.querySelector('.card-title');
+          if (titleEl.scrollWidth > titleEl.clientWidth) {
+            card.classList.add('card--title-compact');
+          }
+        });
+      } else {
+        card.classList.remove('card--title-compact');
+      }
     };
 
     card.querySelector('.card-summary').addEventListener('click', toggleCard);
