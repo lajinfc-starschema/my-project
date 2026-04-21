@@ -229,4 +229,11 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.classList.toggle('open');
     panel.classList.toggle('open');
   });
+
+  const instrToggle = document.getElementById('instructions-toggle');
+  const instrPanel = document.getElementById('instructions-panel');
+  instrToggle.addEventListener('click', () => {
+    instrToggle.classList.toggle('open');
+    instrPanel.classList.toggle('open');
+  });
 });
